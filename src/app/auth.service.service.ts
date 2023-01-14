@@ -24,7 +24,7 @@ loggedIn:boolean=false;
     .subscribe({
       next:(resp)=> {
         console.log(resp[0].name);
-        if (resp.length && resp[0].name===pass && resp[0].rol){
+        if (resp.length && resp[0].name===pass){
             //Con localStorage
             // localStorage.setItem('login','true')
             this.cookies.set('login','true');
