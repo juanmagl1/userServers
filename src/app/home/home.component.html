@@ -1,2 +1,21 @@
 <h1>Server Manager App</h1>
 <p>Manage your Servers and Users</p>
+<button type="button" class="btn btn-primary" (click)="mostrarBoton()">Login</button>
+<button type="button" (click)="logout()" id="logout" class="btn btn-primary">Cerrar Sesión</button>
+<div *ngIf="loguearse">
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">usuario</label>
+          <input type="email" class="form-control" id="usuario" name="usuario" [(ngModel)]="usuario"
+                 aria-describedby="emailHelp" placeholder="Enter email">
+        </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Contraseña</label>
+              <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" 
+                     aria-describedby="pass" placeholder="Enter pass">
+            </div>
+            <!-- Si le pones de tipo boton no funciona el ngsubmit -->
+            <button type="button" (click)="login()" class="btn btn-primary">Enviar</button>
+          </form>
+         
+</div>

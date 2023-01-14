@@ -8,6 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 import { ServersModule } from './servers/servers.module';
 import { HomeComponent } from './home/home.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthServiceService } from './auth.service.service';
+import { ServersService } from './servers/services/servers.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,12 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     HttpClientModule,
     UsersModule,
-    ServersModule
+    ServersModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [AuthGuardService,
+  AuthServiceService,
+ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
